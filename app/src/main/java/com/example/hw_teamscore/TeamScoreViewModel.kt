@@ -1,9 +1,12 @@
 package com.example.hw_teamscore
 
 import android.util.Log
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
+import kotlin.properties.ReadOnlyProperty
 
 class TeamScoreViewModel : ViewModel() {
+    
 
     private var _score = 0
     val score: Int
