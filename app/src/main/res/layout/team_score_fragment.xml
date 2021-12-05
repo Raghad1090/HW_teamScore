@@ -3,22 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
-    >
-
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.main.MainFragment">
+        tools:context=".teamScore">
+
 
         <TextView
-            android:id="@+id/score1"
+            android:id="@+id/score"
             android:layout_width="174dp"
             android:layout_height="54dp"
-            android:hint="@string/score"
+            android:hint="@string/final_score"
             android:textAlignment="center"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -26,10 +24,10 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.211" />
+            app:layout_constraintVertical_bias="0.244" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/addButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
@@ -37,13 +35,13 @@
             android:layout_marginEnd="141dp"
             android:layout_marginBottom="28dp"
             android:text="@string/add_1_point"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/subButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/score1" />
+            app:layout_constraintTop_toBottomOf="@+id/score" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/subButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="111dp"
@@ -51,13 +49,13 @@
             android:layout_marginEnd="113dp"
             android:layout_marginBottom="24dp"
             android:text="@string/subtract_2_points"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintBottom_toTopOf="@+id/add4button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toBottomOf="@+id/addButton" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/add4button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="136dp"
@@ -68,7 +66,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/subButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

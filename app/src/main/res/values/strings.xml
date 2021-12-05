@@ -4,4 +4,6 @@
     <string name="add_1_point">add_1_point</string>
     <string name="subtract_2_points">subtract_2_points</string>
     <string name="add_4_points">add_4_points</string>
+    <string name="enter_score">Enter Score</string>
+    <string name="final_score">final score</string>
 </resources>

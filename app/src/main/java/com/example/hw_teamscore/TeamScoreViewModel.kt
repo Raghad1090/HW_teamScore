@@ -7,36 +7,34 @@ import kotlin.properties.ReadOnlyProperty
 
 class TeamScoreViewModel : ViewModel() {
     
-
+//declare var
     private var _score = 0
     val score: Int
     get() = _score
 
-   fun  addOne(){
 
-       _score =+1
+    //declare functions
 
+   fun  addOne(): Int {
+
+       _score +=1
+
+       return _score
    }
 
 
-   fun addFour() {
+   fun addFour(): Int {
 
-       _score=+4
+       _score+=4
+
+       return _score
    }
 
-   fun subtractTwo(){
 
-       _score=-2
+   fun subtractTwo(): Int {
 
+       _score-=2
+
+       return _score
    }
-
-   init {
-        Log.i("TeamScoreViewModel", "TeamScoreViewModel created!")
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        Log.i("TeamScoreViewModel", "TeamScoreViewModel destroyed!")
-    }
-
 }

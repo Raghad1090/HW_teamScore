@@ -1,5 +1,6 @@
 package com.example.hw_teamscore
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -8,19 +9,18 @@ import android.view.LayoutInflater
 import androidx.fragment.app.viewModels
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hw_teamscore.databinding.TeamScoreFragmentBinding
 
 
 class teamScore : Fragment() {
 
-    private val viewModel1: TeamScoreViewModel by viewModels()
+    private val viewModel : TeamScoreViewModel by viewModels()
 
-    private var binding: TeamScoreFragmentBinding ? = null
 
-    private lateinit var viewModel: TeamScoreViewModel
-
-    private var score = 0
+    private lateinit var binding: TeamScoreFragmentBinding
 
 
     override fun onCreateView(
@@ -28,42 +28,44 @@ class teamScore : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-       // return inflater.inflate(R.layout.team_score_fragment, container, false)
-
+//        return inflater.inflate(R.layout.team_score_fragment, container, false)
+        Log.e("TAG", "onCreateView: first", )
         binding = TeamScoreFragmentBinding.inflate(inflater,container,false)
 
 
-        Log.d("TeamScoreFragment", "TeamScoreFragment created/re-created!")
-
-        return binding!!.root
-
+        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(TeamScoreViewModel::class.java)
+//        viewModel = ViewModelProvider(this).get(TeamScoreViewModel::class.java)
+//        Log.e("TAG", "onViewCreated: first", )
 
         // Setup a click listener for buttons.
-        binding!!.button.setOnClickListener { viewModel.addOne()  }
-        binding!!.button2.setOnClickListener { viewModel.addFour() }
-        binding!!.button3.setOnClickListener { viewModel.subtractTwo() }
-        // Update the UI
-//        showScoreOnScreen()
-        binding!!.score1.text = "getString(R.id.score1, 0)"
+        binding.addButton.setOnClickListener {
+
+            viewModel.addOne()
+            binding.score.text = viewModel.score.toString()
+
+        }
+        binding.add4button.setOnClickListener {
+
+            viewModel.addFour()
+            binding.score.text = viewModel.score.toString()
+        }
+        binding.subButton.setOnClickListener {
+
+            viewModel.subtractTwo()
+            binding.score.text = viewModel.score.toString()
+
+        }
     }
 
 
     override fun onDetach() {
         super.onDetach()
-        Log.d("GameFragment", "GameFragment destroyed!")
     }
-
-
-//    private fun showScoreOnScreen() {
-//        binding!!.score1.text = viewModel.score
-//    }
-
 }
 
